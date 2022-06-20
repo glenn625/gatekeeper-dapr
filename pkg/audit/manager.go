@@ -730,7 +730,7 @@ func (am *Manager) skipExcludedNamespace(obj *unstructured.Unstructured) (bool, 
 
 func (ucloop *updateConstraintLoop) updateConstraintStatus(ctx context.Context, instance *unstructured.Unstructured, auditResults []updateListEntry, timestamp string, totalViolations int64) error {
 	constraintName := instance.GetName()
-	ucloop.log.Info("updating constraint status", "constraintName", constraintName)
+	ucloop.log.Info("updating MAJOR constraint status", "constraintName", constraintName)
 	// create constraint status violations
 	var statusViolations []interface{}
 	for i := range auditResults {
