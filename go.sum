@@ -366,6 +366,10 @@ github.com/d2g/dhcp4client v1.0.0/go.mod h1:j0hNfjhrt2SxUOw55nL0ATM/z4Yt3t2Kd1mW
 github.com/d2g/dhcp4server v0.0.0-20181031114812-7d4a0a7f59a5/go.mod h1:Eo87+Kg/IX2hfWJfwxMzLyuSZyxSoAug2nGa1G2QAi8=
 github.com/d2g/hardwareaddr v0.0.0-20190221164911-e7d9fbe030e4/go.mod h1:bMl4RjIciD2oAxI7DmWRx6gbeqrkoLqv3MV0vzNad+I=
 github.com/danieljoos/wincred v1.1.0/go.mod h1:XYlo+eRTsVA9aHGp7NGjFkPla4m+DCL7hqDjlFjiygg=
+github.com/dapr/dapr v1.6.1-0.20220223052122-c503710ab2d1 h1:Yuvx+yFFrYeQym9JptSO7ur/qi1J9veuNI267LwE7uk=
+github.com/dapr/dapr v1.6.1-0.20220223052122-c503710ab2d1/go.mod h1:IDaZ/nAVT5A3Wb9zofMgnpiR3NB7eg6k2HzuwmYWtSg=
+github.com/dapr/go-sdk v1.4.0 h1:Bbk2p9XhrTTZLwb7A8t1z3iQtiINAmpVLlQHFqZX17s=
+github.com/dapr/go-sdk v1.4.0/go.mod h1:t3hylW10Sf2ByFWGpD2IiqnCTAOI0O6kzg4ZkS8CbJw=
 github.com/davecgh/go-spew v1.1.0/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c=
 github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=

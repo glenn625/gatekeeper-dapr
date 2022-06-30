@@ -48,6 +48,8 @@ require (
 	sigs.k8s.io/yaml v1.3.0
 )
 
+require github.com/dapr/dapr v1.6.1-0.20220223052122-c503710ab2d1 // indirect
+
 require (
 	cloud.google.com/go/compute v1.6.1 // indirect
 	cloud.google.com/go/monitoring v1.5.0 // indirect
@@ -60,6 +62,7 @@ require (
 	github.com/blang/semver/v4 v4.0.0 // indirect
 	github.com/census-instrumentation/opencensus-proto v0.3.0 // indirect
 	github.com/cespare/xxhash/v2 v2.1.2 // indirect
+	github.com/dapr/go-sdk v1.4.0
 	github.com/emicklei/go-restful v2.15.0+incompatible // indirect
 	github.com/evanphx/json-patch v5.6.0+incompatible // indirect
 	github.com/felixge/httpsnoop v1.0.3 // indirect
