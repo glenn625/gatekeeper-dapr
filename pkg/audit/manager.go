@@ -56,7 +56,7 @@ var (
 	auditFromCache            = flag.Bool("audit-from-cache", false, "pull resources from OPA cache when auditing")
 	emitAuditEvents           = flag.Bool("emit-audit-events", false, "(alpha) emit Kubernetes events in gatekeeper namespace with detailed info for each violation from an audit")
 	auditMatchKindOnly        = flag.Bool("audit-match-kind-only", false, "only use kinds specified in all constraints for auditing cluster resources. if kind is not specified in any of the constraints, it will audit all resources (same as setting this flag to false)")
-	publishViolationsToDapr   = flag.Bool("publish-violations-to-dapr", false, "publish all constraint violations to Dapr pub-sub component.")
+	publishViolationsToDapr   = flag.Bool("publish-violations-to-dapr", true, "publish all constraint violations to Dapr pub-sub component.")
 	apiCacheDir               = flag.String("api-cache-dir", defaultAPICacheDir, "The directory where audit from api server cache are stored, defaults to /tmp/audit")
 	emptyAuditResults         []updateListEntry
 )
@@ -685,7 +685,10 @@ func (am *Manager) addAuditResponsesToUpdateLists(
 
 		// Publish audit result to Dapr message broker.
 		if *publishViolationsToDapr {
-			am.publishViolationToDapr(context.Background(), r.Constraint, ea, gvk, namespace, name, r.Msg, details)
+			err := am.publishViolationToDapr(context.Background(), r.Constraint, ea, gvk, namespace, name, r.Msg, details)
+			if err != nil {
+				am.log.Error(err, "Error publishing violation to Dapr.")
+			}
 		}
 
 		totalViolationsPerEnforcementAction[ea]++

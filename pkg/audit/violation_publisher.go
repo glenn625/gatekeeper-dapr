@@ -39,16 +39,14 @@ func (am *Manager) publishViolationToDapr(
 	enforcementAction util.EnforcementAction,
 	resourceGroupVersionKind schema.GroupVersionKind,
 	rnamespace, rname, message string,
-	details interface{}) {
+	details interface{}) error {
 
-	client, err := dapr.NewClient()
+	daprClient, err := dapr.NewClient()
 	if err != nil {
 		am.log.Error(err, "Error creating Dapr client.")
 	}
 
-	defer client.Close()
-
-	if err := client.PublishEvent(ctx, pubsubName, topicName, DetailedStatusViolation{
+	if err := daprClient.PublishEvent(ctx, pubsubName, topicName, DetailedStatusViolation{
 		Message:              message,
 		Details:              details,
 		ConstraintGroup:      constraint.GroupVersionKind().Group,
@@ -64,5 +62,12 @@ func (am *Manager) publishViolationToDapr(
 		ResourceName:         rname,
 	}); err != nil {
 		am.log.Error(err, "Could not publish violation to message broker.")
+		return err
 	}
+
+	am.log.Info("Publishing a violation to message broker")
+	
+	// defer daprClient.Close()
+
+	return nil
 }
