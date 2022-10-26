@@ -92,6 +92,18 @@ github.com/census-instrumentation/opencensus-proto/gen-go/trace/v1
 # github.com/cespare/xxhash/v2 v2.1.2
 ## explicit; go 1.11
 github.com/cespare/xxhash/v2
+# github.com/dapr/dapr v1.6.1-0.20220223052122-c503710ab2d1
+## explicit; go 1.17
+github.com/dapr/dapr/pkg/proto/common/v1
+github.com/dapr/dapr/pkg/proto/runtime/v1
+# github.com/dapr/go-sdk v1.4.0
+## explicit; go 1.17
+github.com/dapr/go-sdk/actor
+github.com/dapr/go-sdk/actor/codec
+github.com/dapr/go-sdk/actor/codec/constant
+github.com/dapr/go-sdk/actor/codec/impl
+github.com/dapr/go-sdk/actor/config
+github.com/dapr/go-sdk/client
 # github.com/davecgh/go-spew v1.1.1
 ## explicit
 github.com/davecgh/go-spew/spew

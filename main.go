@@ -86,7 +86,7 @@ var (
 )
 
 var (
-	logLevel             = flag.String("log-level", "INFO", "Minimum log level. For example, DEBUG, INFO, WARNING, ERROR. Defaulted to INFO if unspecified.")
+	logLevel             = flag.String("log-level", "DEBUG", "Minimum log level. For example, DEBUG, INFO, WARNING, ERROR. Defaulted to INFO if unspecified.")
 	logLevelKey          = flag.String("log-level-key", "level", "JSON key for the log level field, defaults to `level`")
 	logLevelEncoder      = flag.String("log-level-encoder", "lower", "Encoder for the value of the log level field. Valid values: [`lower`, `capital`, `color`, `capitalcolor`], default: `lower`")
 	healthAddr           = flag.String("health-addr", ":9090", "The address to which the health endpoint binds.")
